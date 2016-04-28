@@ -1,14 +1,15 @@
 var path = require('path')
 var webpack = require('webpack')
-var jsPath = path.join(__dirname, 'public/javascripts');
+var srcPath = path.join(__dirname, 'resources/javascripts')
+var destPath = path.join(__dirname, 'public/javascripts')
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
-      './public/javascripts/'
+      srcPath
   ],
   output: {
-    path: path.join(jsPath, 'build'),
+    path: destPath,
     filename: 'bundle.js',
     publicPath: 'assets'
   },
@@ -28,6 +29,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ["node_modules", "./"]
+    modulesDirectories: ["node_modules", srcPath]
   }
 }
