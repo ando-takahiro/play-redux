@@ -51,7 +51,7 @@ public class AsyncController extends Controller {
         CompletableFuture<String> future = new CompletableFuture<>();
         actorSystem.scheduler().scheduleOnce(
             Duration.create(time, timeUnit),
-            () -> future.complete("Hi!"),
+            () -> future.complete("\"Hi!\""),
             exec
         );
         return future;
